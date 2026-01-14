@@ -1,3 +1,32 @@
 spring:
   application:
     name: shop
+
+  thymeleaf:
+    cache: false
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://3.34.163.80:5432/shop
+    username: postgres
+    password: 5091
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc.time_zone: Asia/Seoul
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.hibernate.sql: info
